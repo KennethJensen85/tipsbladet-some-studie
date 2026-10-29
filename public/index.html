@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tipsbladets SoMe-studie</title>
+<link rel="icon" href="assets/ikon-groen.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;1,400;1,700&family=Barlow:wght@400;500;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>Tipsbladets SoMe-studie<small>Vælg et format, læg billeder og tekst ind, og hent slides klar til Instagram og story.</small></h1>
+    <div class="line">
+      <button class="btn small" id="resetFmt" type="button">Nulstil format</button>
+      <button class="btn primary" id="zipBtn" type="button">Hent alle (.zip)</button>
+    </div>
+  </header>
+
+  <section class="panel" aria-label="Format og størrelse">
+    <div class="fmts" id="fmts"></div>
+    <div class="toolrow">
+      <span class="lab">Størrelse</span>
+      <div class="seg" id="sizes" role="group" aria-label="Størrelse"></div>
+      <span class="spacer"></span>
+      <span class="flow" id="flow"></span>
+    </div>
+  </section>
+
+  <section class="panel">
+    <details class="lib" id="libDetails">
+      <summary>Logoer <span class="count" id="libSum"></span></summary>
+      <div class="libgrid2">
+        <div class="brand">
+          <h4>Tipsbladet-logo</h4>
+          <div class="brandrow" id="brandIcon"></div>
+          <div class="brandrow" id="brandWhite"></div>
+          <p class="hint">Det grønne ikon er indbygget. Vil du have den hvide logo-version med teksten “Tipsbladet” som standard for alle, så læg den som <code>public/assets/tipsbladet-logo-hvid.png</code>. Du kan også uploade den her, men så gemmes den kun i din browser.</p>
+        </div>
+        <div class="clubs">
+          <h4>Klublogoer</h4>
+          <div class="drop" id="drop">
+            Træk logofiler eller en hel mappe herind
+            <div class="acts">
+              <label class="btn small">Vælg filer<input class="hid" type="file" id="pickFiles" accept="image/*" multiple></label>
+              <label class="btn small">Vælg mappe<input class="hid" type="file" id="pickDir" webkitdirectory multiple></label>
+            </div>
+          </div>
+          <div class="libtools">
+            <input type="search" id="libSearch" placeholder="Søg i logoer" aria-label="Søg i logoer">
+            <button class="btn small" id="libSave" type="button">Gem som fil</button>
+            <label class="btn small">Indlæs fil<input class="hid" type="file" id="libLoad" accept="application/json,.json"></label>
+          </div>
+          <div id="libGrid"></div>
+          <p class="hint">Logoer uden “×” er husets samling og ligger i mappen <code>public/logos</code> i projektet. Dem, du selv trækker ind her, gemmes kun i din browser. Brug “Gem som fil”, hvis andre skal have dem.</p>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <section class="cards" id="cards" aria-live="polite"></section>
+  <div class="allbar"><div class="inner"><span class="info" id="zipInfo"></span><button class="btn primary" id="zipBtn2" type="button">Hent alle (.zip)</button></div></div>
+</div>
+<div id="toast" role="status"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

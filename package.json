@@ -1,0 +1,11 @@
+{
+  "name": "tipsbladet-some-studie",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tipsbladets SoMe-studie: lav slides til Instagram og story",
+  "scripts": {
+    "logos": "node scripts/make-manifest.mjs",
+    "build": "node scripts/make-manifest.mjs",
+    "dev": "node scripts/make-manifest.mjs && python3 -m http.server 3000 -d public"
+  }
+}

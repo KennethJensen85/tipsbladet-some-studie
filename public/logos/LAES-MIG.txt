@@ -1,0 +1,3 @@
+Læg klublogoer her (png, svg, webp eller jpg).
+Filnavnet bliver til logoets navn i studiet, fx 'fc-koebenhavn.png' -> 'fc koebenhavn'.
+Kør 'npm run logos' lokalt, eller bare push - Vercel opdaterer listen automatisk ved hver udrulning.
